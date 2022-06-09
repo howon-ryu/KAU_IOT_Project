@@ -89,9 +89,11 @@ public class FindChangeActivity extends AppCompatActivity {
 
                 String Keyword =  mEditTextSearchKeyword.getText().toString();
                 mEditTextSearchKeyword.setText("");
+                for(int i =0; i < 1; i++){
+                    FindChangeActivity.GetData task = new FindChangeActivity.GetData();
+                    task.execute( "https://vn23hf5ug1.execute-api.ap-northeast-2.amazonaws.com/default/Andorid_AWS_GetData\n", Keyword);
 
-                FindChangeActivity.GetData task = new FindChangeActivity.GetData();
-                task.execute( "https://vn23hf5ug1.execute-api.ap-northeast-2.amazonaws.com/default/Andorid_AWS_GetData\n", Keyword);
+                }
             }
         });
     }
@@ -242,9 +244,9 @@ public class FindChangeActivity extends AppCompatActivity {
         ArrayList<Float> Dust_data_List = new ArrayList<>();
         try {
             JSONObject jsonObject = new JSONObject(mJsonString);
-
             String str = jsonObject.getString("body");
             JSONArray jsonArray1 = new JSONArray(str);
+
             for(int i=0; i < jsonArray1.length(); i++){
                 JSONObject jsonObjectBody = jsonArray1.getJSONObject(i);
                 String ID = jsonObjectBody.getString(TAG_ID);
@@ -263,17 +265,19 @@ public class FindChangeActivity extends AppCompatActivity {
                     mAdapter.notifyDataSetChanged();
                 }
             }
-            for(int i=0,j=0,c=0; i<Dust_data_List.size(); i++){
+            for(int i=0,j=0,c=0,k=0; i<Dust_data_List.size(); i++,c++){
                 j += Dust_data_List.get(i);
-                Log.d("view_dust", String.format("%d",j));
+
 
 
                 if(i % 24 == 0 && i !=0){
-                    dDustList.add(new Entry(c++,j / i));
+                    dDustList.add(new Entry(k++,j / c));
                     Log.d("dust", Integer.toString(j));
                     j = 0;
+                    c = 0 ;
+
                 }else if(i == Dust_data_List.size() -1){
-                    dDustList.add(new Entry(c++,j / i));
+                    dDustList.add(new Entry(k++,j / c));
                     Log.d("dust", Integer.toString(i));
                 }
             }
@@ -286,7 +290,9 @@ public class FindChangeActivity extends AppCompatActivity {
 
             lineChart.setData(chartData); // 차트에 위의 DataSet을 넣는다.
 
+
             lineChart.invalidate(); // 차트 업데이트
+
             lineChart.setTouchEnabled(false); // 차트 터치 disable
 
 
@@ -294,7 +300,7 @@ public class FindChangeActivity extends AppCompatActivity {
 
         } catch (JSONException e) {
 
-            Log.d(TAG, "showResult : ",e);
+            Log.d("12311", "showResult11 : ",e);
         }
 
     }

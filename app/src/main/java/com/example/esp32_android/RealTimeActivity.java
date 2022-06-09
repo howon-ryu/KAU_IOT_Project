@@ -37,11 +37,20 @@ public class RealTimeActivity extends AppCompatActivity {
     private String name;
 
     @Override
+    protected  void onPause(){
+        super.onPause();
+        RealTimeActivity.InsertData task = new RealTimeActivity.InsertData();
+        task.execute("https://ycvtuyh484.execute-api.ap-northeast-2.amazonaws.com/default/Andorid_AWS_Communication", "###");
+
+
+    }
+    @Override
     protected void onStop(){
+
         super.onStop();
 
         RealTimeActivity.InsertData task = new RealTimeActivity.InsertData();
-        task.execute("https://ycvtuyh484.execute-api.ap-northeast-2.amazonaws.com/default/Andorid_AWS_Communication", "###");
+        //task.execute("https://ycvtuyh484.execute-api.ap-northeast-2.amazonaws.com/default/Andorid_AWS_Communication", "###");
 
         mEditTextName.setText("");
     }

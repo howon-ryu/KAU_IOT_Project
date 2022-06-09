@@ -40,32 +40,40 @@ public class InitApplication extends Application {
                 notificationChannel.enableVibration(true);
                 notificationManager.createNotificationChannel(notificationChannel);
             }
+            FirebaseMessaging.getInstance().subscribeToTopic("notify0").addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    Toast.makeText(getApplicationContext(),"notify0 topic 구독",Toast.LENGTH_SHORT).show();
+                }
+            });
             FirebaseMessaging.getInstance().subscribeToTopic("notify1").addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
-                    Toast.makeText(getApplicationContext(),"custom topic 구독",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"notify1 topic 구독",Toast.LENGTH_SHORT).show();
                 }
             });
             FirebaseMessaging.getInstance().subscribeToTopic("notify2").addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
-                    Toast.makeText(getApplicationContext(),"notify topic 구독",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"notify2 topic 구독",Toast.LENGTH_SHORT).show();
                 }
             });
 
             FirebaseMessaging.getInstance().subscribeToTopic("notify3").addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
-                    Toast.makeText(getApplicationContext(),"notify topic 구독",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"notify3 topic 구독",Toast.LENGTH_SHORT).show();
                 }
             });
 
             FirebaseMessaging.getInstance().subscribeToTopic("notify4").addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
-                    Toast.makeText(getApplicationContext(),"notify topic 구독",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"notify4 topic 구독",Toast.LENGTH_SHORT).show();
                 }
             });
+
+
 
             FirebaseMessaging.getInstance().subscribeToTopic("realTime").addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override

@@ -24,7 +24,7 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
-    private static final String[] topics = {"/topics/notify1", "/topics/notify2","/topics/notify3","/topics/notify4"};
+    private static final String[] topics = {"/topics/notify0","/topics/notify1", "/topics/notify2","/topics/notify3","/topics/notify4"};
     private TextView mTextViewData;
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -86,6 +86,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 notificationId = 2;
             } else if (topic.equals(topics[3])) {
                 notificationId = 3;
+            } else if (topic.equals(topics[4])) {
+                notificationId = 4;
             }
 
             if (notificationId >= 0) {

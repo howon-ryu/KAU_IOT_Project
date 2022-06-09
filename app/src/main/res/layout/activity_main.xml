@@ -15,36 +15,6 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_marginBottom="5dp"
-            android:text="이름과 나라를 입력 후 입력 버튼을 터치하세요."
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView_main_input" />
-
-        <EditText
-            android:layout_margin="5dp"
-            android:hint = "이름을 입력하세요."
-            android:inputType="text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText_main_name" />
-
-        <EditText
-            android:layout_margin="5dp"
-            android:hint = "나라를 입력하세요."
-            android:inputType="text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText_main_country" />
-
-        <Button
-            android:layout_margin="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="입력"
-            android:id="@+id/button_main_insert" />
-
-        <TextView
             android:layout_marginTop="20dp"
             android:layout_marginBottom="5dp"
             android:text="이름을 입력 후 검색 버튼을 터치하세요."
@@ -85,26 +55,26 @@
 
             <TextView
                 android:id="@+id/editText_main_category_ID"
-                android:layout_width="66dp"
-                android:layout_height="23dp"
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="0.7"
-                android:textAlignment="center"
                 android:gravity="center"
-                android:text="ID"/>
+                android:text="ID"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/editText_main_category_DATE"
-                android:layout_width="149dp"
+                android:layout_width="166dp"
                 android:layout_height="23dp"
                 android:layout_weight="0.7"
-                android:textAlignment="center"
                 android:gravity="center"
-                android:text="DATE" />
+                android:text="DATE"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/editText_main_category_HUMID"
-                android:layout_width="95dp"
-                android:layout_height="23dp"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="0.7"
                 android:gravity="center"
                 android:text="HUMID"
@@ -119,49 +89,31 @@
                 android:text="TEMP"
                 android:textAlignment="center" />
 
-            <TextView
-                android:id="@+id/editText_main_category_FD"
-                android:layout_width="66dp"
-                android:layout_height="23dp"
-                android:layout_weight="0.7"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:text="FD" />
-            <TextView
-                android:id="@+id/editText_main_category_WC"
-                android:layout_width="66dp"
-                android:layout_height="23dp"
-                android:layout_weight="0.7"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:text="WC" />
-
 
         </LinearLayout>
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_margin="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="6"
-            android:id="@+id/listView_main_list" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listView_main_list"
+            android:layout_width="match_parent"
+            android:layout_height="166dp"
+            android:layout_margin="5dp"
+            android:layout_weight="6" />
 
         <!--- 디버깅 용 -->
-        <TextView
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="5dp"
-            android:text="디버깅 용"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView_main_debug" />
+
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="366dp" />
 
         <TextView
-            android:layout_margin="5dp"
             android:id="@+id/textView_main_result"
-            android:scrollbars = "vertical"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.5" />
+            android:layout_width="382dp"
+            android:layout_height="4dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1.5"
+            android:scrollbars="vertical" />
     </LinearLayout>
 
 

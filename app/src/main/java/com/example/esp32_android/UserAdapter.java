@@ -25,18 +25,15 @@ class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.CustomViewHolder> {
         protected TextView ID;
         protected TextView DATE;
         protected TextView HUMID;
-        protected TextView FD;
+        protected TextView DUST;
         protected TextView TEMP;
-        protected TextView WC;
 
         public CustomViewHolder(View view) {
             super(view);
             this.ID = (TextView) view.findViewById(R.id.textView_list_ID);
             this.DATE = (TextView) view.findViewById(R.id.textView_list_DATE);
             this.HUMID = (TextView) view.findViewById(R.id.textView_list_HUMID);
-            this.FD = (TextView) view.findViewById(R.id.textView_list_FD);
             this.TEMP = (TextView) view.findViewById(R.id.textView_list_TEMP);
-            this.WC = (TextView) view.findViewById(R.id.textView_list_WC);
 
         }
     }
@@ -56,8 +53,7 @@ class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.CustomViewHolder> {
         viewholder.DATE.setText(mList.get(position).getMember_DATE());
         viewholder.TEMP.setText(mList.get(position).getMember_TEMP());
         viewholder.HUMID.setText(mList.get(position).getMember_HUMID());
-        viewholder.FD.setText(mList.get(position).getMember_FD());
-        viewholder.WC.setText(mList.get(position).getMember_WC());
+
 
     }
 
